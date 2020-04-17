@@ -23,6 +23,10 @@ app.get('/booksList', function (req, res) {
   res.send(booksList);
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+let port: any = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function () {
+  console.log('Example app listening on port ' + port + '!');
 });

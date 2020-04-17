@@ -8,6 +8,13 @@
     "build": "webpack",
     "start": "node build/index.js"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "engines": {
+    "node": "12.7.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
