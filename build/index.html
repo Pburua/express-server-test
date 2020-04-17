@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    <title>Architects of Belarus</title>
+  <body>
+    <div id="app">123</div>
+  </body>
+
+  <script>
+    (async function () {
+      let response = await fetch('/booksList');
+      let booksList = await response.json();
+      let displayedText = '';
+      for (let item in booksList) {
+        for (let key in booksList[item]) {
+          displayedText += key + ': ';
+          displayedText += booksList[item][key] + '\n';
+        }
+      }
+      document.getElementById('app').innerText = displayedText;
+      console.log(booksList);
+    })();
+  </script>
+</html>
